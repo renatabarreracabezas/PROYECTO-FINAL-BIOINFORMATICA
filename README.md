@@ -74,3 +74,4 @@ Abre el archivo .treefile en FigTree.
 Ahora puedes visualizar la filogenia de las secuencias del gen rbcL del género Polylepis.
 
 RESULTADOS: 
+![ÁRBOL](https://github.com/renatabarreracabezas/PROYECTO-FINAL-BIOINFORMATICA/blob/main/Polylepis_rbcl.fasta.treefile.png)
