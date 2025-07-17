@@ -10,11 +10,11 @@ Quiero evaluar si existen suficientes datos genéticos públicos para estas espe
 
 Q3. ¿Qué programas voy a usar en mi proyecto?
 
-NCBI (GenBank): Para buscar y descargar secuencias del gen rbcL de especies de Polylepis.
-
-Geneious / MEGA / Clustal Omega: Para alinear las secuencias y construir árboles filogenéticos.
-
-GitHub + Git Bash: Para documentar el proceso, subir scripts y compartir resultados reproducibles.
+- Conexión con un supercomputador en este caso Hoffman2
+- Muscle
+- IQTREE
+- FigTree (http://tree.bio.ed.ac.uk/software/figtree/)
+- EDirect
 
 Pregunta de investigación:
 ¿Existe suficiente información genética (secuencias del gen rbcL) para las especies de Polylepis nativas del Ecuador en bases de datos públicas, o hay una brecha importante que limita los esfuerzos de conservación, identificación y estudio de su diversidad genética?
@@ -23,3 +23,46 @@ Pregunta de investigación:
 La falta de información genética básica impide conocer con precisión la diversidad y relaciones evolutivas de estas especies. Esto es especialmente crítico en Ecuador, donde muchas especies de Polylepis son endémicas o están mal estudiadas. Mejorar la disponibilidad de datos podría fortalecer los planes de conservación, restauración ecológica y estrategias de protección frente al cambio climático.
 
 Q4. Imagen https://phytokeys.pensoft.net/article/83529/zoom/fig/16/
+
+Diseño de Proyecto:
+
+Importar las secuencias de NCBI con EDirect
+Alinear las secuencias importadas desde NCBI (MUSCLE)
+Descargar el output del alineamiento
+Ejecutar las filogenias posibles (IQTREE)
+Finalmente visualizar las filogenias en un árbol (FIGTREE)
+
+1. Conectarse al supercomputador Hoffman2
+Accede al servidor mediante tu cuenta institucional para iniciar el análisis.
+
+2. Instalar EDirect
+Ejecuta este comando para instalar las herramientas de EDirect:
+
+sh -c "$(curl -fsSL https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/install-edirect.sh)"
+3. Verificar que la instalación fue exitosa
+esearch -version
+4. Buscar y guardar los IDs de las secuencias rbcL del género Polylepis
+esearch -db nucleotide -query "Polylepis[Organism] AND rbcL[Gene] AND 500:3000[Sequence Length]" |
+efetch -format uid > polylepis_rbcl_ids.txt
+5. Descargar las secuencias en formato FASTA
+efetch -db nucleotide -id $(cat polylepis_rbcl_ids.txt) -format fasta > polylepis_rbcl.fasta
+6. Verificar que las secuencias se descargaron correctamente
+grep ">" polylepis_rbcl.fasta
+7. Alinear las secuencias con MUSCLE
+Asegúrate de tener MUSCLE instalado y ejecuta:
+./muscle3.8.31_i86linux64 -in polylepis_rbcl.fasta -out polylepis_rbcl.alineamiento.fasta -maxiters 1 -diags
+8. Crear la filogenia con IQ-TREE
+Primero carga el módulo de IQ-TREE:
+module load iqtree/2.2.2.6
+Luego ejecuta el análisis filogenético:
+iqtree2 -s polylepis_rbcl.alineamiento.fasta
+Esto generará varios archivos nuevos basados en tu alineamiento, incluyendo el importante archivo con extensión .treefile.
+
+9. Visualizar la filogenia con FigTree
+Descarga el programa desde: http://tree.bio.ed.ac.uk/software/figtree/
+
+Copia el archivo .treefile a tu escritorio local con scp, usando la ruta que obtuviste con pwd.
+
+Abre el archivo .treefile en FigTree.
+
+Ahora puedes visualizar la filogenia de las secuencias del gen rbcL del género Polylepis.
