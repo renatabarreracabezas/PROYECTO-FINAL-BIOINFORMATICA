@@ -72,3 +72,5 @@ Copia el archivo .treefile a tu escritorio local con scp, usando la ruta que obt
 Abre el archivo .treefile en FigTree.
 
 Ahora puedes visualizar la filogenia de las secuencias del gen rbcL del género Polylepis.
+
+RESULTADOS: 
