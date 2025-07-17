@@ -75,3 +75,8 @@ Ahora puedes visualizar la filogenia de las secuencias del gen rbcL del género 
 
 RESULTADOS: 
 ![ÁRBOL](https://github.com/renatabarreracabezas/PROYECTO-FINAL-BIOINFORMATICA/blob/main/Polylepis_rbcl.fasta.treefile.png)
+
+
+Resultado: Los resultados de mi análisis filogenético revelaron la presencia de solo cuatro especies de Polylepis, lo cual refleja una grave falta de información en las bases de datos utilizadas y una mala actualización de los registros taxonómicos. Este número es significativamente inferior a las 10 especies nativas reconocidas del género, lo que indica que la mayoría de los linajes no están adecuadamente representados en los estudios moleculares disponibles.
+
+Además, el árbol filogenético incluyó incorrectamente a Polylepis racemosa, una especie no nativa del grupo en estudio, lo que sugiere posibles errores en la identificación o contaminación de secuencias en las bases de datos públicas (como GenBank). Esta inclusión errónea refuerza la idea de que los datos genéticos disponibles para Polylepis son fragmentarios, desactualizados o mal curados, dificultando la reconstrucción precisa de las relaciones evolutivas.
