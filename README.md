@@ -20,3 +20,4 @@ Pregunta de investigación:
 
 ¿Por qué es importante este trabajo?
 La falta de información genética básica impide conocer con precisión la diversidad y relaciones evolutivas de estas especies. Esto es especialmente crítico en Ecuador, donde muchas especies de Polylepis son endémicas o están mal estudiadas. Mejorar la disponibilidad de datos podría fortalecer los planes de conservación, restauración ecológica y estrategias de protección frente al cambio climático.
+Q4. Imagen https://phytokeys.pensoft.net/article/83529/zoom/fig/16/
