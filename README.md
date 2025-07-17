@@ -39,26 +39,32 @@ Accede al servidor mediante tu cuenta institucional para iniciar el análisis.
 Ejecuta este comando para instalar las herramientas de EDirect:
 
 sh -c "$(curl -fsSL https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/install-edirect.sh)"
+
 3. Verificar que la instalación fue exitosa
 esearch -version
-4. Buscar y guardar los IDs de las secuencias rbcL del género Polylepis
+
+5. Buscar y guardar los IDs de las secuencias rbcL del género Polylepis
 esearch -db nucleotide -query "Polylepis[Organism] AND rbcL[Gene] AND 500:3000[Sequence Length]" |
 efetch -format uid > polylepis_rbcl_ids.txt
-5. Descargar las secuencias en formato FASTA
+
+7. Descargar las secuencias en formato FASTA
 efetch -db nucleotide -id $(cat polylepis_rbcl_ids.txt) -format fasta > polylepis_rbcl.fasta
-6. Verificar que las secuencias se descargaron correctamente
+
+9. Verificar que las secuencias se descargaron correctamente
 grep ">" polylepis_rbcl.fasta
-7. Alinear las secuencias con MUSCLE
+
+11. Alinear las secuencias con MUSCLE
 Asegúrate de tener MUSCLE instalado y ejecuta:
 ./muscle3.8.31_i86linux64 -in polylepis_rbcl.fasta -out polylepis_rbcl.alineamiento.fasta -maxiters 1 -diags
-8. Crear la filogenia con IQ-TREE
+
+13. Crear la filogenia con IQ-TREE
 Primero carga el módulo de IQ-TREE:
 module load iqtree/2.2.2.6
 Luego ejecuta el análisis filogenético:
 iqtree2 -s polylepis_rbcl.alineamiento.fasta
 Esto generará varios archivos nuevos basados en tu alineamiento, incluyendo el importante archivo con extensión .treefile.
 
-9. Visualizar la filogenia con FigTree
+14. Visualizar la filogenia con FigTree
 Descarga el programa desde: http://tree.bio.ed.ac.uk/software/figtree/
 
 Copia el archivo .treefile a tu escritorio local con scp, usando la ruta que obtuviste con pwd.
