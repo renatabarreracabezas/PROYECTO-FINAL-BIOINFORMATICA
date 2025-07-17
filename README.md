@@ -1,5 +1,6 @@
 # GEN rbcL EN POLYLEPIS DE ECUADOR
 Polylepis nativos.
+
 Q1. ¿En qué organismo o grupo de organismos vas a trabajar?
 Voy a trabajar con árboles del género Polylepis, nativos de los Andes y presentes en los ecosistemas de alta montaña del Ecuador, como páramos y bosques montanos. Estas especies son fundamentales para la provisión de servicios ecosistémicos, como la regulación hídrica y la conservación de biodiversidad, pero muchas están amenazadas por la deforestación, el cambio climático y la expansión agropecuaria.
 
@@ -20,4 +21,5 @@ Pregunta de investigación:
 
 ¿Por qué es importante este trabajo?
 La falta de información genética básica impide conocer con precisión la diversidad y relaciones evolutivas de estas especies. Esto es especialmente crítico en Ecuador, donde muchas especies de Polylepis son endémicas o están mal estudiadas. Mejorar la disponibilidad de datos podría fortalecer los planes de conservación, restauración ecológica y estrategias de protección frente al cambio climático.
+
 Q4. Imagen https://phytokeys.pensoft.net/article/83529/zoom/fig/16/
